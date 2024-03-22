@@ -5,7 +5,7 @@ For testing purposes, DUMP could be set to True for avoiding to reanalyse the fi
 In launching the main function, either put a number of a case (for instance 447143 for case 12 July 2022 of French Council of State) or put "Random" for selection of random files.
 
 The program uses a repository for all xml files of the French case-law (which can be downloaded at https://www.data.gouv.fr/fr/datasets/jade/ )
-and a folder for sf2 soundfonts and configuration files succh as ensemble.json files 
+and a folder for sf2 soundfonts and configuration files such as ensemble.json files 
 
 The programme uses the SCAMP Python library developed by Marc Evanstein. It can generate sounds and process several Midi instruments. The scores are created with the Lylipond program. Midi synthesis is done with Fluidsynth. The animations on the HTML page use the P5 Javascript library. 
 
