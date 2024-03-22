@@ -1,4 +1,4 @@
-"Sound of Case-law can be used to transform judgments from the French Council of State and the Administrative Courts of Appeal into scores. The programme can process around 90,000 judgments (judgments since 2018 to work on the new wording introduced at that date). 
+"Sound of Case-law" can be used to transform judgments from the French Council of State and the Administrative Courts of Appeal into scores. The programme can process around 90,000 judgments (judgments since 2018 to work on the new wording introduced at that date). 
 
 The programme automatically generates the musical score from the text of a judgment. For example, to listen to the Conseil d'État ruling of 12 July 2022, no. 447143, simply enter "447143" in the corresponding field. You can also make a random selection using the "Random generate" button. Use the 'Replay' button to replay the track. The 'Score' button displays the score. 
 
