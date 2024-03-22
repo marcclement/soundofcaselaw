@@ -95,7 +95,7 @@ Instrument 1 plays the microstructure with a different transformation depending 
 Instrument 2 plays « PROCEDURE » paragraphs. 
 Instrument 3 plays only « TITRE » microstructure. 
 
-![Alt text](/images/howitworks_html_5c26094.gif?raw=true "image")
+![Alt text](/images/images/howitworks_html_702ab1d3.gif?raw=true "image")
 
 
 
