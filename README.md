@@ -37,12 +37,16 @@ Each label is associated with a value :
 "FRAIS IRREPETIBLES":8, "APPEL":9, "FIN REJET":10, "FIN ACCEPTE":11}
 
 We are going to create a  musical "microstructure" from groups of four labels associated with values. For example, for the start of the judgement 447143, we have PROCEDURE TITRE REJETE TITRE, which gives the series of values 1 4 2 4 and therefore, if we take the value 48 as the basis, the following Midi values 49 53 50 48, which will be reflected in the following Midi notes because we are adjusting the values to the chosen scale (in this case major scale starting with C, C# does not belong to C Major so the closest note is chosen, which is D). 
-![Alt text](/images/howitworks_html_5c26094.gif?raw=true "Optional Title")
+![Alt text](/images/howitworks_html_5c26094.gif?raw=true "image")
 
 
 
 For TITRE (headings) paragraphs, the microstructure is based on the words in the heading that are analysed.
 
 For example, the first heading of judgment no. 447143 reads as follows « Sur les conclusions à fins de non-lieu à statuer présentées par l’association des habitants Plumereau-Halles-Résistance-Victoire de Tours » :
+
+
+![Alt text](/images/howitworks_html_7cf9e655.gif?raw=true "image")
+
 
 
