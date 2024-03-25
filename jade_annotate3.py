@@ -138,7 +138,7 @@ class Text_annotated():
         dispositif=False
         for line in self.lines:
 
-            self.message("Analyse : "+line)
+            self.message("Analysis --> "+line)
 
             if (line=="MOTIFS"):
                 motif=True

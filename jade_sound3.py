@@ -60,9 +60,11 @@ if not LOCAL:
     sys.stdout = buffer
 
 class Pattern():
-    def __init__(self,name, beats, lead, base1, base2, base3, silence, idpattern, nbserie):
+    def __init__(self,csd, beats, lead, base1, base2, base3, silence, idpattern, nbserie):
         
-         self.name=name
+         self.name=csd[3]
+         self.text=csd[0]
+         
          self.lead=lead
          self.beats=beats
          self.base1=base1
@@ -707,7 +709,11 @@ class Jade_sound():
         self.annotator=jade_annotate3.Text_annotated()
         with open(self.path_sound_data + "selected_cases.pck",'rb') as fhand:
             self.selected_cases = pickle.load(fhand)
-        print(len(self.selected_cases))
+        with open(self.path_sound_data + "selected_cases_CAA.pck",'rb') as fhand:
+            self.selected_cases_CAA = pickle.load(fhand)
+        with open(self.path_sound_data + "selected_cases_CE.pck",'rb') as fhand:
+            self.selected_cases_CE = pickle.load(fhand)
+        
    
 
     def clean_xml(self,case_raw):
@@ -758,7 +764,13 @@ class Jade_sound():
             while txt=="" and not number_failed:
                 text=""
                 if number=="Random":    
-                    jgt_test=random.choice(list(self.selected_cases.values()))
+                    # for random choice with selecte first randomly CAA or CE
+                    # since there are substantially more CAA cases than CE
+                    CAA = random.randint(0, 1)
+                    if CAA==0:
+                        jgt_test=random.choice(list(self.selected_cases_CAA.values()))
+                    else:
+                        jgt_test=random.choice(list(self.selected_cases_CE.values()))
                 else:
                     if number in self.selected_cases:
                         jgt_test=self.selected_cases[number]
@@ -787,8 +799,8 @@ class Jade_sound():
                             for elt in tree.iter('NUMERO'):
                                 numero = elt.text.strip()
                                 # take only CE decisions (no CAA)
-                                if numero[2:4].isnumeric():
-                                    for elt in tree.iter('CONTENU'):
+                                #if numero[2:4].isnumeric():
+                                for elt in tree.iter('CONTENU'):
                                         text=elt.text
                                         break
                     if not (text==""):
@@ -899,7 +911,7 @@ class Jade_sound():
            # the span of pitches is based root pitch plus maximum calculated
            # with the number of words in phrase with a maximum of 10 points 
            # increase
-           maxpitch=max(10,int(len(phr)/(min(len(phr),10)))) 
+            
            for w in phr:  
               pitch+=self.get_pitch_from_w(w["text"][0])
               duration.append(durval[min(len(w)// 8,len(durval)-1)])
@@ -931,7 +943,7 @@ class Jade_sound():
         
         return pitch, duration, volume, style, text
     
-    def make_pattern(self, name, mcr, sq_array, idpattern, nbserie):
+    def make_pattern(self, csd, mcr, sq_array, idpattern, nbserie):
        
         mcr_silence=copy.deepcopy(mcr)
         mcr_silence.silence()
@@ -942,8 +954,9 @@ class Jade_sound():
         mcr_base3=copy.deepcopy(mcr)
         mcr_base3.set_sequence("base3", sq_array)
         beats=mcr.totalduration
+    
         
-        pattern=Pattern(name, beats, mcr, mcr_base1, mcr_base2, mcr_base3, mcr_silence, idpattern, nbserie)
+        pattern=Pattern( csd, beats, mcr, mcr_base1, mcr_base2, mcr_base3, mcr_silence, idpattern, nbserie)
         
         return pattern
          
@@ -963,7 +976,7 @@ class Jade_sound():
          
          for csd in motifs:
             
-             mcr_array=[]
+
              
              if nbmotif>=(idmcr+1)*CHUNK_SIZE:
                     idmcr+=1
@@ -995,20 +1008,20 @@ class Jade_sound():
              
              if (csd[3]=="TITRE"):
                  mcr_titre=self.gen_microstructure_titre(csd)
-                 pat_titre=self.make_pattern(csd[3], mcr_titre, sq_array, idpattern, idmotif)
+                 pat_titre=self.make_pattern(csd, mcr_titre, sq_array, idpattern, idmotif)
                  pat_array.append(pat_titre)
                  pat_titre.add_sequence(sq_array,2)
                 
                  idpattern+=1
 
              elif (csd[3]=="PRINCIPE"):      
-                 pat_princ=self.make_pattern(csd[3], mcr_princ, sq_array, idpattern, idmotif)
+                 pat_princ=self.make_pattern(csd, mcr_princ, sq_array, idpattern, idmotif)
                  pat_array.append(pat_princ)
                  pat_princ.add_sequence(sq_array,1)
                  idpattern+=1
                  
              elif(csd[3]=="PROCEDURE"):    
-                 pat_proc=self.make_pattern(csd[3], mcr_proc, sq_array, idpattern, idmotif)
+                 pat_proc=self.make_pattern(csd, mcr_proc, sq_array, idpattern, idmotif)
                  pat_array.append(pat_proc)
                  pat_proc.add_sequence(sq_array,1)
                  idpattern+=1
@@ -1016,7 +1029,7 @@ class Jade_sound():
              elif(csd[3]=="REJETE"):        
                  pitch, duration, vol, styl, text =self.set_phrase(csd[1],mcr_rej.totalduration, 0.8, [""])  
                  mcr_rej.substitute(pitch, duration, vol, styl, text)                  
-                 pat_rej=self.make_pattern(csd[3], mcr_rej, sq_array, idpattern, idmotif)
+                 pat_rej=self.make_pattern(csd, mcr_rej, sq_array, idpattern, idmotif)
                  pat_array.append(pat_rej)
                  pat_rej.add_sequence(sq_array,1)
                  idpattern+=1                   
@@ -1024,24 +1037,24 @@ class Jade_sound():
              elif(csd[3]=="ACCEPTE"):
                  pitch, duration, vol, styl, text =self.set_phrase(csd[1],mcr_acc.totalduration, 0.8, [""])  
                  mcr_acc.substitute(pitch, duration, vol, styl, text)                  
-                 pat_acc=self.make_pattern(csd[3], mcr_acc, sq_array, idpattern, idmotif)
+                 pat_acc=self.make_pattern(csd, mcr_acc, sq_array, idpattern, idmotif)
                  pat_array.append(pat_acc)
                  pat_acc.add_sequence(sq_array,1)
                  idpattern+=1 
   
              elif(csd[3]=="TEXTE"):                  
-                 pat_texte=self.make_pattern(csd[3], mcr_texte, sq_array, idpattern, idmotif)
+                 pat_texte=self.make_pattern(csd, mcr_texte, sq_array, idpattern, idmotif)
                  pat_array.append(pat_texte)
                  pat_texte.add_sequence(sq_array,1)
                  idpattern+=1
  
              elif(csd[3]=="FRAIS IRREPETIBLES"):                  
-                 pat_fir=self.make_pattern(csd[3], mcr_fir, sq_array, idpattern, idmotif)
+                 pat_fir=self.make_pattern(csd, mcr_fir, sq_array, idpattern, idmotif)
                  pat_array.append(pat_fir)
                  pat_fir.add_sequence(sq_array,1)
                  idpattern+=1
              else:
-                 pat_texte=self.make_pattern(csd[3], mcr_texte, sq_array, idpattern, idmotif)
+                 pat_texte=self.make_pattern(csd, mcr_texte, sq_array, idpattern, idmotif)
                  pat_array.append(pat_texte)
                  pat_texte.add_sequence(sq_array,1)
                  idpattern+=1
@@ -1055,14 +1068,14 @@ class Jade_sound():
             
             mcr_end.set_sequence("lead", sq_array)
             mcr_end.isolate_long(0,[""],False)
-            pat_end=self.make_pattern(csd[3], mcr_end, sq_array, idpattern, nbdispositif)
+            pat_end=self.make_pattern(csd, mcr_end, sq_array, idpattern, nbdispositif)
             pat_array.append(pat_end)
             pat_end.add_sequence(sq_array,1)
             idpattern+=1
             nbdispositif+=1
     
              
-         return sq_array   
+         return sq_array, pat_array   
      
         
     def gen_microstructure_titre(self,csd):  
@@ -1202,27 +1215,23 @@ class Jade_sound():
         else:
             print(text)
                
-    def make_lyrics(self,sq_array,texts, tempo, beats_motifs, beats_dispositif, titre):
+    def make_lyrics(self,sq_array,pat_array, tempo, titre):
         lyrics=[]
         lyrics_spots=[]
         
         clock=0.1
-        ind=0
-        for t in texts:                
-            lyrics.append([clock,t[0]])
-            ind+=1
-            if t[2]=="MOTIFS":
-                clock=ind*beats_motifs*60/tempo
-            else:
-                clock=ind*beats_dispositif*60/tempo
-        # add title in the end of lyrics
+    
+        for p in pat_array:                
+            lyrics.append([clock,p.text])
+            clock+=p.beats*60/tempo
+            
         lyrics.append([clock-1,titre])
             
         for sq in sq_array:
             l=sq.export_text(tempo)
             for c in l:
                 if not c[1]=="None":
-                    lyrics.append(c)
+                    #lyrics.append(c)
                     lyrics_spots.append(c)
         lyrics=sorted(lyrics)
         lyrics_spots=sorted(lyrics_spots)
@@ -1231,6 +1240,8 @@ class Jade_sound():
     def generate_main(self, number):
 
         adsr=self.set_envelope(1)
+        lyrics=[]
+        lyrics_spots=[]
         sf2_file=self.path_sound_data+"Arachno SoundFont - Version 1.0.sf2"
         #sf2_file=self.path_sound_data+"Sonatina_Symphonic_Orchestra.sf2"
         #sf2_file=self.path_sound_data+"wt_183k_G.sf2"
@@ -1362,7 +1373,7 @@ class Jade_sound():
                                          default_volume,styles,texts,"", True))
             mcr_dispositif =self.gen_microstructure(notes_dispositif, beats_dispositif,
                                          default_volume,styles,texts,"", True)
-            sq_array=self.partition(mcr_motifs, mcr_dispositif, sq_array, motifs, dispositif)
+            sq_array, pat_array=self.partition(mcr_motifs, mcr_dispositif, sq_array, motifs, dispositif)
            
             
             for sq in sq_array: 
@@ -1386,13 +1397,13 @@ class Jade_sound():
             performance = s.stop_transcribing()
             
             performance.quantize()
-            perf_result="Number of measures :"+str(performance.num_measures())
+            perf_result="Number of measures :"+str(performance.num_measures())+" ...wait for preparation of score !"
 
     
             self.message(perf_result)
             
             if performance.num_measures()>0:
-                lyrics, lyrics_spots =self.make_lyrics(sq_array, texts, s.tempo, beats_motifs, beats_dispositif, titre)
+                lyrics, lyrics_spots =self.make_lyrics(sq_array, pat_array, s.tempo, titre)
                 with open(self.sound_data_wav_path+name+".json",'w') as outfile:
                     outfile.write(json.dumps(lyrics, indent=4))
                 with open(self.sound_data_wav_path+name+".spot",'w') as outfile:
@@ -1477,7 +1488,7 @@ if __name__ == "__main__":
     if LOCAL:
         soundjade=Jade_sound()
         # soulevement 476384 465835
-        name, lyrics, lyrics_spots, titre=soundjade.generate_main("447143")
+        name, lyrics, lyrics_spots, titre=soundjade.generate_main("Random")
 
     
     
