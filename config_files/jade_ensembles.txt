@@ -1,0 +1,75 @@
+{
+   'matiere' : 'Social',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Economie',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Société',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Urbanisme',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Civil',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Publique',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Education',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Elections',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Etrangers',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Environnement',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Fonctionnaires',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'impôts',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Justice',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'CJA',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}
+{
+   'matiere' : 'Urbanisme',
+   'instruments' : ['Piano 1','Piano 2', 'Piano 3', 'Cello', 'Violin 1','Violin 2'],
+   'keys' : [KEY, KEY, KEY, KEY, KEY, KEY, KEY]
+}

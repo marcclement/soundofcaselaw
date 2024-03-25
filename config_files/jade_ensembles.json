@@ -1,0 +1,114 @@
+{"ensembles": [
+{
+   "matiere" : "Social",
+   "instruments" : ["Xylophone 1","Xylophone 2", "Piano 1", "Piano 2", "Piano 3","Piano 4"],
+   "keys" : [84, 87 , 60, 84, 48, 30],
+   "levels" : [0.8, 0.8, 0.8, 0.8, 0.8, 0.8],
+   "tempo" : 60,
+   "scale" : "major"
+},
+{
+   "matiere" : "Economie",
+   "instruments" : ["Piano 1","Piano 2", "Tubular 1", "Tubular 2", "Drums 1","Drums 2"],
+   "keys" : [80, 90, 60, 60, 40, 40],
+   "levels" : [0.8, 0.8, 0.8, 0.8, 0.8, 0.8],
+   "tempo" : 120,
+   "scale" : "pentatonic"
+},
+{
+   "matiere" : "Société",
+   "instruments" : ["Bright Piano 1","Bright Piano 2", "Crystal Piano 3", "Crystal Piano 4", "Piano 5","Piano 6"],
+   "keys" : [60, 75, 30, 30, 50, 48],
+   "levels" : [0.8, 0.8, 0.8, 0.8, 0.8, 0.8],
+   "tempo" : 40,
+   "scale" : "major"
+},
+{
+   "matiere" : "Civil",
+   "instruments" : ["Piano 1","Piano 2", "Piano 3", "Piano 4", "Piano 5","Piano 6"],
+   "keys" : [80, 70, 60, 48, 48, 35],
+   "levels" : [1, 1, 1, 1, 1, 1],
+   "tempo" : 60,
+   "scale" : "major"
+},
+{
+   "matiere" : "Publique",
+   "instruments" : ["Music box 1","Music box 2", "Piano 3", "Piano 4", "Piano 5","Piano 6"],
+   "keys" : [72, 84, 60, 60, 30, 30],
+   "levels" : [1, 1, 0.8, 0.8, 0.9, 0.8],
+   "tempo" : 40,
+   "scale" : "major"
+},
+{
+   "matiere" : "Education",
+   "instruments" : ["Piano 1","Piano 2", "Piano 3", "Piano 4", "Woodblock 1","Woodblock 2"],
+   "keys" : [48, 30, 60, 30, 80, 78],
+   "levels" : [0.8, 0.8, 0.8, 0.8, 0.8,0.8],
+   "tempo" : 60,
+   "scale" : "pentatonic"
+},
+{
+   "matiere" : "Elections",
+   "instruments" : ["Nylon Guitar 1","Nylon Guitar 2", "Piano 1", "Muted Guitar", "Piano 2","Piano 3"],
+   "keys" : [60, 60, 60, 60, 48, 48],
+   "levels" : [0.8, 0.8, 0.8, 0.8, 0.8, 0.8],
+   "tempo" : 60,
+   "scale" : "major"
+},
+{
+   "matiere" : "Etrangers",
+   "instruments" : ["Piano 1","Piano 2", "Guitar 1", "Guitar 2", "Percussive Organ 1","Percussive Organ 2"],
+   "keys" : [80, 75, 60, 60, 50, 50],
+   "levels" : [0.8, 0.8, 0.8, 0.8, 0.8, 0.8],
+   "tempo" : 40,
+   "scale" : "pentatonic"
+},
+{
+   "matiere" : "Environnement",
+   "instruments" : ["Xylophone 1","Xylophone 2", "Tubular 1", "Tubular 2", "Woodblock 1","Woodblock 2"],
+   "keys" : [60, 60, 60, 60, 40, 40],
+   "levels" : [0.8, 0.8, 0.8, 0.8, 0.8, 0.8],
+   "tempo" : 60,
+   "scale" : "major"
+},
+{
+   "matiere" : "Fonctionnaires",
+   "instruments" : ["Piano 1","Piano 2", "Piano 3", "Piano 4", "Woodblock 1","Woodblock 2"],
+   "keys" : [48, 51, 60, 30, 60, 48],
+   "levels" : [0.8, 0.8, 0.8, 0.8, 0.8,0.8],
+   "tempo" : 60,
+   "scale" : "major"
+},
+{
+   "matiere" : "Impôts",
+   "instruments" : ["Piano 1","Piano 2", "Piano 3", "Piano 4", "Piano 5","Piano 6"],
+   "keys" : [80, 70, 60, 48, 48, 35],
+   "levels" : [1, 1, 1, 1, 1, 1],
+   "tempo" : 20,
+   "scale" : "chromatic"
+},
+{
+   "matiere" : "Justice",
+   "instruments" : ["Synth Calliope 1","Synth Calliope 2", "Metal Pad 1", "Metal Pad 2", "Electronic Drum Kit 1","Electronic Drum Kit 2"],
+   "keys" : [70, 75, 60, 60, 20, 25],
+   "levels" : [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8],
+   "tempo" : 60,
+   "scale" : "major"
+},
+{
+   "matiere" : "CJA",
+   "instruments" : ["Piano 1","Piano 2", "Piano 3", "Piano 4", "Piano 5","Piano 6"],
+   "keys" : [84, 79, 60, 60, 48, 41],
+   "levels" : [0.8, 0.8, 0.8, 0.8, 0.8,0.8],
+   "tempo" : 60,
+   "scale" : "major"
+},
+{
+   "matiere" : "Urbanisme",
+   "instruments" : ["Piano 1","Piano 2", "Piano 3", "Piano 4", "Marimba 1","Marimba 2"],
+   "keys" : [70, 75, 60, 50, 60, 65],
+   "levels" : [0.8, 0.8, 0.8, 0.4, 0.6, 0.6],
+   "tempo" : 60,
+   "scale" : "major"
+}
+]}

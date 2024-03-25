@@ -1,0 +1,7 @@
+«.*?» QOT1
+".*?" QOT2
+\d{1,2}(er){0,1}(\s){1,10}(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)(\s){1,10}(\d){4} DAT
+\[.*?\] REF
+article\sL?\.?R?\.?O?\.?\s?(\d){1,4}(\s?-?\s?(\d){0,3}){0,2} ART1
+article\sL?\.?R?\.?O?\.?\s?(\d){1,4}\s?-?\s?(\d){0,3} ART2
+article\sL?\.?R?\.?O?\.?\s?(\d){1,4} ART3
