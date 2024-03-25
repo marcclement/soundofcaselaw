@@ -1,6 +1,6 @@
 "Sound of Case-law can be used to transform judgments from the French Council of State and the Administrative Courts of Appeal into scores. The programme can process more than 100,000 judgments (judgments since 2018 to work on the new wording introduced at that date in French administrative courts). 
 
-The programme automatically generates the musical score from the text of a judgment. For example, to listen to the Conseil d'État ruling of 12 July 2022, no. 447143, simply enter "447143" in the corresponding field. You can also make a random selection using the "Random generate" button. Use the 'Replay' button to replay the track. The 'Score' button displays the score. 
+The programme automatically generates the musical score from the text of a judgment. For example, to listen to the Conseil d'État ruling of 12 July 2022, no. 447143, simply enter "447143" has a parameter in main function or type "Random" for random choice.
 
 The programme uses the SCAMP Python library developed by Marc Evanstein. It can generate sounds and process several Midi instruments. The scores are created with the Lylipond program. Midi synthesis is done with Fluidsynth. The animations on the HTML page use the P5 Javascript library. 
 
